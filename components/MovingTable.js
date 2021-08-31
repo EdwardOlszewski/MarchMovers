@@ -44,7 +44,7 @@ export default function BasicTable({ width, title, data }) {
         </Typography>
         <TableBody>
           {data.map((info) => (
-            <TableRow>
+            <TableRow key={info.rate}>
               <TableCell style={{ borderColor: '#f2f2f2' }} align='center'>
                 <Container
                   style={{
