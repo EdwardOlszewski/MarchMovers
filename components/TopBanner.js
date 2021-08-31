@@ -4,9 +4,13 @@ import { makeStyles, Typography, Paper, Container } from '@material-ui/core'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    height: '20rem',
+    height: '25rem',
   },
-  title: { textAlign: 'center', margin: 'auto', paddingTop: '3rem' },
+  title: {
+    textAlign: 'center',
+    margin: 'auto',
+    paddingTop: '7rem',
+  },
 }))
 
 export default function ButtonAppBar({ children }) {

@@ -1,10 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, Hidden } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import MobileMenu from './MobileMenu'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     backgroundColor: 'white',
+    boxShadow: 'rgba(0, 0, 0, 0.03) 0px 1px 2px 0px',
   },
   toolbar: {
     paddingRight: '4rem',
@@ -27,8 +29,8 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    color: 'black',
-    fontSize: '200%',
+    color: '#CC2936',
+    fontSize: '250%',
   },
 }))
 
@@ -37,22 +39,28 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.appBar} position='static' elevation={0}>
+      <AppBar className={classes.appBar} position='fixed' elevation={0}>
         <Toolbar className={classes.toolbar}>
-          <Typography variant='h6' className={classes.title}>
+          <Typography variant='h5' className={classes.title}>
             March Movers
           </Typography>
-          <Link href='/'>
-            <Button className={classes.menuButton}>Home</Button>
-          </Link>
+          <Hidden smDown>
+            <Link href='/'>
+              <Button className={classes.menuButton}>Home</Button>
+            </Link>
 
-          <Link href='/recommendation'>
-            <Button className={classes.menuButton}>Services</Button>
-          </Link>
+            <Link href='/services'>
+              <Button className={classes.menuButton}>services</Button>
+            </Link>
 
-          <Link href='/recommendation'>
-            <Button className={classes.menuButton}>Recommendations</Button>
-          </Link>
+            <Link href='/recommendations'>
+              <Button className={classes.menuButton}>Recommendations</Button>
+            </Link>
+          </Hidden>
+
+          <Hidden mdUp>
+            <MobileMenu />
+          </Hidden>
         </Toolbar>
       </AppBar>
     </div>

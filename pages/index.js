@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '0rem 1rem 0rem 1rem',
   },
   imageText: {
+    color: '#1B2021',
     [theme.breakpoints.up('md')]: {
       marginTop: '-6rem',
     },
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   imageTextTwo: {
+    color: '#1B2021',
     [theme.breakpoints.only('sm')]: {
       fontSize: '5vw',
     },
@@ -51,12 +53,14 @@ export default function Home() {
   return (
     <>
       <TopBanner>
-        <Typography variant='h2'>{'Family owned &'}</Typography>
-        <Typography variant='h3'>{'operated since 1957'}</Typography>
+        <Typography variant='h2'>Family owned &</Typography>
+        <Typography variant='h3' style={{ color: '#CC2936' }}>
+          operated since 1957
+        </Typography>
       </TopBanner>
 
       <>
-        <div style={{ backgroundColor: '#f4f4f4', padding: '2rem' }}>
+        <div style={{ backgroundColor: '#f8f8f8', padding: '2rem' }}>
           <Container maxWidth='lg'>
             <Grid container>
               <Grid item xs={12} sm={6} md={4} className={classes.gridItem}>
@@ -94,7 +98,15 @@ export default function Home() {
         >
           <Grid container spacing={10}>
             <Grid item xs={12} md={5} lg={6} className={classes.gridItem}>
-              <Typography variant='h3'>About Us</Typography>
+              <Typography variant='h3' style={{ color: '#CC2936' }}>
+                Owned and operated
+              </Typography>
+              <Typography variant='h3' style={{ color: '#CC2936' }}>
+                by the March family
+              </Typography>
+              <Typography variant='h3' style={{ color: '#CC2936' }}>
+                since 1957
+              </Typography>
             </Grid>
             <Grid item xs={12} md={7} lg={6} className={classes.gridItem}>
               <Typography variant='h6' className={classes.aboutText}>
@@ -114,6 +126,14 @@ export default function Home() {
             </Grid>
           </Grid>
         </div>
+
+        <div
+          style={{
+            backgroundColor: '#f8f8f8',
+            padding: '2rem',
+            marginTop: '4rem',
+          }}
+        ></div>
       </>
     </>
   )

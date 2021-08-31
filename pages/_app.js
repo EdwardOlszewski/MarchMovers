@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
-import { ThemeProvider, useTheme } from '@material-ui/core/styles'
-import { Paper, Container } from '@material-ui/core'
+import { PageTransition } from 'next-page-transitions'
+import { Paper, ThemeProvider } from '@material-ui/core'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import theme from '../styles/theme'
 import '../styles/globals.css'
@@ -34,7 +34,9 @@ export default function MyApp(props) {
         <CssBaseline />
         <Navbar />
         <Paper style={theme.root} elevation={0}>
-          <Component {...pageProps} />
+          <PageTransition timeout={300} classNames='page-transition'>
+            <Component {...pageProps} />
+          </PageTransition>
         </Paper>
         <Footer />
       </ThemeProvider>
