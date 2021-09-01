@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { makeStyles, Hidden, IconButton } from '@material-ui/core'
@@ -16,8 +16,9 @@ import PhoneOutlinedIcon from '@material-ui/icons/PhoneOutlined'
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined'
 import BusinessOutlinedIcon from '@material-ui/icons/BusinessOutlined'
 import MenuIcon from '@material-ui/icons/Menu'
+import MenuOpenIcon from '@material-ui/icons/MenuOpen'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
   },
@@ -25,14 +26,16 @@ const useStyles = makeStyles({
     width: 'auto',
   },
   hamburgerIcon: {
-    marginTop: '-1rem',
     color: 'black',
+    width: '2.5rem',
+    height: '2.5rem',
   },
-})
+}))
 
 export default function SwipeableTemporaryDrawer() {
   const classes = useStyles()
-  const [state, setState] = React.useState(false)
+  const [state, setState] = useState(false)
+  const [open, setOpen] = useState(false)
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -40,9 +43,11 @@ export default function SwipeableTemporaryDrawer() {
       event.type === 'keydown' &&
       (event.key === 'Tab' || event.key === 'Shift')
     ) {
+      setOpen(!open)
       return
     }
 
+    setOpen(!open)
     setState({ ...state, [anchor]: open })
   }
 
@@ -118,13 +123,17 @@ export default function SwipeableTemporaryDrawer() {
   )
 
   return (
-    <Hidden lgUp>
+    <Hidden mdUp>
       <React.Fragment key={'left'}>
         <IconButton
           onClick={toggleDrawer('left', true)}
           className={classes.hamburgerIcon}
         >
-          <MenuIcon fontSize='large' />
+          {!open ? (
+            <MenuOpenIcon fontSize='large' />
+          ) : (
+            <MenuIcon fontSize='large' />
+          )}
         </IconButton>
 
         <SwipeableDrawer

@@ -9,40 +9,71 @@ import TopBanner from '../components/TopBanner'
 import Image from 'next/image'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
+  //Containers
   gridItem: {
     margin: 'auto',
     textAlign: 'center',
-    padding: '0rem 1rem 0rem 1rem',
+    [theme.breakpoints.up('xl')]: {
+      padding: '0rem 1rem 0rem 1rem',
+    },
   },
+  grayDiv: {
+    backgroundColor: '#f8f8f8',
+    padding: '2rem 0rem 2rem 0rem',
+  },
+  container: {
+    [theme.breakpoints.up('xs')]: {
+      width: '90%',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '80%',
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: '60%',
+    },
+  },
+
+  //Top Of Page
+  pageTitle: {
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '4vmax',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '3vmax',
+    },
+  },
+
+  //Image Area
   imageText: {
     color: '#1B2021',
-    [theme.breakpoints.up('md')]: {
-      marginTop: '-6rem',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '3vmax',
     },
-    [theme.breakpoints.only('sm')]: {
-      fontSize: '5vw',
-    },
-    [theme.breakpoints.only('xs')]: {
-      marginTop: '2rem',
-      fontSize: '7vw',
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '2vmax',
     },
   },
-  imageTextTwo: {
-    color: '#1B2021',
-    [theme.breakpoints.only('sm')]: {
-      fontSize: '5vw',
+
+  //About Area
+  aboutHeading: {
+    color: '#CC2936',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '3vmax',
     },
-    [theme.breakpoints.only('xs')]: {
-      fontSize: '7vw',
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '2vmax',
     },
   },
   aboutText: {
     textAlign: 'left',
-    [theme.breakpoints.only('xl')]: {
-      fontSize: '1vw',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '2vmax',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5vmax',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.3vmax',
     },
   },
 }))
@@ -53,17 +84,23 @@ export default function Home() {
   return (
     <>
       <TopBanner>
-        <Typography variant='h2'>Family owned &</Typography>
-        <Typography variant='h3' style={{ color: '#CC2936' }}>
+        <Typography variant='h2' className={classes.pageTitle}>
+          Family owned &
+        </Typography>
+        <Typography
+          variant='h3'
+          className={classes.pageTitle}
+          style={{ color: '#CC2936' }}
+        >
           operated since 1957
         </Typography>
       </TopBanner>
 
       <>
-        <div style={{ backgroundColor: '#f8f8f8', padding: '2rem' }}>
-          <Container maxWidth='lg'>
-            <Grid container>
-              <Grid item xs={12} sm={6} md={4} className={classes.gridItem}>
+        <div className={classes.grayDiv}>
+          <Container maxWidth='false' className={classes.container}>
+            <Grid container spacing={3}>
+              <Grid item xs={12} sm={5} md={4} className={classes.gridItem}>
                 <Image
                   src='/images/familyPic.png'
                   width={'90%'}
@@ -71,16 +108,16 @@ export default function Home() {
                   layout={'responsive'}
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={8} className={classes.gridItem}>
+              <Grid item xs={12} sm={7} md={8} className={classes.gridItem}>
                 <Typography variant='h3' className={classes.imageText}>
                   We will protect your
                 </Typography>
                 <br />
-                <Typography variant='h3' className={classes.imageTextTwo}>
+                <Typography variant='h3' className={classes.imageText}>
                   family’s possessions
                 </Typography>
                 <br />
-                <Typography variant='h3' className={classes.imageTextTwo}>
+                <Typography variant='h3' className={classes.imageText}>
                   like a trusted friend
                 </Typography>
               </Grid>
@@ -97,19 +134,21 @@ export default function Home() {
           }}
         >
           <Grid container spacing={10}>
-            <Grid item xs={12} md={5} lg={6} className={classes.gridItem}>
-              <Typography variant='h3' style={{ color: '#CC2936' }}>
+            <Grid item xs={12} md={5} lg={5} className={classes.gridItem}>
+              <Typography variant='h2' className={classes.aboutHeading}>
                 Owned and operated
               </Typography>
-              <Typography variant='h3' style={{ color: '#CC2936' }}>
+              <br />
+              <Typography variant='h2' className={classes.aboutHeading}>
                 by the March family
               </Typography>
-              <Typography variant='h3' style={{ color: '#CC2936' }}>
+              <br />
+              <Typography variant='h2' className={classes.aboutHeading}>
                 since 1957
               </Typography>
             </Grid>
-            <Grid item xs={12} md={7} lg={6} className={classes.gridItem}>
-              <Typography variant='h6' className={classes.aboutText}>
+            <Grid item xs={12} md={7} lg={7} className={classes.gridItem}>
+              <Typography variant='h5' className={classes.aboutText}>
                 Charles J March Sr. became licensed by the Illinois Commerce
                 Commission in 1957. Mr. March came from a family of 8 boys and 7
                 girls of which all 8 boys started their working careers in the

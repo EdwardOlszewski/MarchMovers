@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  title: {
+    display: 'inline-block',
+  },
   gridItem: {
     margin: 'auto',
     textAlign: 'center',
@@ -54,7 +57,9 @@ export default function Recommendations() {
   return (
     <>
       <TopBanner>
-        <Typography variant='h2'>Recommendations</Typography>
+        <Typography variant='h2' className={classes.title}>
+          Testimonials
+        </Typography>
       </TopBanner>
 
       <>

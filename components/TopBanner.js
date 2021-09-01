@@ -4,7 +4,15 @@ import { makeStyles, Typography, Paper, Container } from '@material-ui/core'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    height: '25rem',
+    [theme.breakpoints.up('xs')]: {
+      height: '250px',
+    },
+    [theme.breakpoints.up('md')]: {
+      height: '300px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      height: '20vmax',
+    },
   },
   title: {
     textAlign: 'center',
