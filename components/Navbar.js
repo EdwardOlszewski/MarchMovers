@@ -6,8 +6,18 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import MobileMenu from './MobileMenu'
+import Fab from '@material-ui/core/Fab'
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
+import Zoom from '@material-ui/core/Zoom'
+import useScrollTrigger from '@material-ui/core/useScrollTrigger'
+import Box from '@material-ui/core/Box'
 
 const useStyles = makeStyles((theme) => ({
+  zoom: {
+    position: 'fixed',
+    bottom: theme.spacing(3),
+    right: theme.spacing(3),
+  },
   root: {
     flexGrow: 1,
   },
@@ -44,11 +54,40 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
+function ScrollTop(props) {
+  const { children, window } = props
+  const classes = useStyles()
+
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100,
+  })
+
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      '#back-to-top-anchor'
+    )
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }
+
+  return (
+    <Zoom in={trigger}>
+      <div onClick={handleClick} role='presentation' className={classes.zoom}>
+        {children}
+      </div>
+    </Zoom>
+  )
+}
+
 export default function ButtonAppBar() {
   const classes = useStyles()
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id='back-to-top-anchor'>
       <AppBar className={classes.appBar} position='fixed' elevation={0}>
         <Toolbar className={classes.toolbar}>
           <Typography variant='h5' className={classes.title}>
@@ -69,6 +108,15 @@ export default function ButtonAppBar() {
           </Hidden>
 
           <MobileMenu />
+          <ScrollTop>
+            <Fab
+              style={{ backgroundColor: '#CC2936', color: 'white' }}
+              size='small'
+              aria-label='scroll back to top'
+            >
+              <KeyboardArrowUpIcon />
+            </Fab>
+          </ScrollTop>
         </Toolbar>
       </AppBar>
     </div>

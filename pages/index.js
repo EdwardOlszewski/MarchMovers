@@ -77,7 +77,7 @@ export default function Home() {
 
   return (
     <>
-      <TopBanner>
+      <TopBanner id='back-to-top-anchor'>
         <Typography variant='h2' className={classes.pageTitle}>
           Family owned &
         </Typography>

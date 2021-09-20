@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { makeStyles, Hidden, IconButton } from '@material-ui/core'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
-import Button from '@material-ui/core/Button'
 import List from '@material-ui/core/List'
 import Divider from '@material-ui/core/Divider'
 import ListItem from '@material-ui/core/ListItem'
@@ -16,7 +15,6 @@ import PhoneOutlinedIcon from '@material-ui/icons/PhoneOutlined'
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined'
 import BusinessOutlinedIcon from '@material-ui/icons/BusinessOutlined'
 import MenuIcon from '@material-ui/icons/Menu'
-import MenuOpenIcon from '@material-ui/icons/MenuOpen'
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -35,19 +33,8 @@ const useStyles = makeStyles((theme) => ({
 export default function SwipeableTemporaryDrawer() {
   const classes = useStyles()
   const [state, setState] = useState(false)
-  const [open, setOpen] = useState(false)
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
-      setOpen(!open)
-      return
-    }
-
-    setOpen(!open)
     setState({ ...state, [anchor]: open })
   }
 
@@ -64,7 +51,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               <HomeOutlinedIcon />
             </ListItemIcon>
-            <ListItemText primary={'Home'} />
+            <ListItemText primary='Home' />
           </ListItem>
         </Link>
 
@@ -73,7 +60,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               <AssignmentOutlinedIcon />
             </ListItemIcon>
-            <ListItemText primary={'Services'} />
+            <ListItemText primary='Services' />
           </ListItem>
         </Link>
 
@@ -82,7 +69,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               <ThumbUpOutlinedIcon />
             </ListItemIcon>
-            <ListItemText primary={'Recommendations'} />
+            <ListItemText primary='Recommendations' />
           </ListItem>
         </Link>
       </List>
@@ -95,7 +82,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               <PhoneOutlinedIcon />
             </ListItemIcon>
-            <ListItemText primary={'(708) 425-2800 '} />
+            <ListItemText primary='(708) 425-2800 ' />
           </ListItem>
         </a>
 
@@ -104,7 +91,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               <EmailOutlinedIcon />
             </ListItemIcon>
-            <ListItemText primary={'marchmovers @gmail.com'} />
+            <ListItemText primary='marchmovers @gmail.com' />
           </ListItem>
         </a>
 
@@ -113,9 +100,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               <BusinessOutlinedIcon />
             </ListItemIcon>
-            <ListItemText
-              primary={'10004 S 76th Ave Suite I Bridgeview, IL 60455'}
-            />
+            <ListItemText primary='10004 S 76th Ave Suite I Bridgeview, IL 60455' />
           </ListItem>
         </a>
       </List>
@@ -128,12 +113,9 @@ export default function SwipeableTemporaryDrawer() {
         <IconButton
           onClick={toggleDrawer('left', true)}
           className={classes.hamburgerIcon}
+          id='back-to-top-anchor'
         >
-          {!open ? (
-            <MenuOpenIcon fontSize='large' />
-          ) : (
-            <MenuIcon fontSize='large' />
-          )}
+          <MenuIcon fontSize='large' />
         </IconButton>
 
         <SwipeableDrawer
