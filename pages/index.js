@@ -67,10 +67,10 @@ const useStyles = makeStyles((theme) => ({
   aboutText: {
     textAlign: 'left',
     [theme.breakpoints.up('xs')]: {
-      fontSize: '2.5vmax',
+      fontSize: '3vmax',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '1.5vmax',
+      fontSize: '2vmax',
     },
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.3vmax',
