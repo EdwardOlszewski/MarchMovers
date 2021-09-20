@@ -49,6 +49,32 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '2rem',
     paddingBottom: '2rem',
   },
+
+  heading: {
+    textAlign: 'center',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '5vmax',
+    },
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '4vmax',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '3vmax',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '2.5vmax',
+    },
+  },
+
+  //Top Of Page
+  pageTitle: {
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '4vmax',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '3vmax',
+    },
+  },
 }))
 
 export default function Recommendations() {
@@ -57,7 +83,7 @@ export default function Recommendations() {
   return (
     <>
       <TopBanner>
-        <Typography variant='h2' className={classes.title}>
+        <Typography variant='h2' className={classes.pageTitle}>
           Testimonials
         </Typography>
       </TopBanner>
@@ -89,31 +115,28 @@ export default function Recommendations() {
 
         <div
           style={{
-            padding: '2rem',
+            padding: '1rem',
             marginTop: '4rem',
           }}
         >
-          <Container maxWidth='lg'>
-            <Typography variant='h3' className={classes.heading}>
-              Our Commerical Customers
-            </Typography>
-            <Grid container spacing={10}>
-              <Grid item xs={12} sm={6} md={6} className={classes.gridItem}>
-                <MovingTable width={'24rem'} data={customerGroupOne} />
-              </Grid>
-              <Grid item xs={12} sm={6} md={6}>
-                <MovingTable width={'24rem'} data={customerGroupTwo} />
-              </Grid>
+          <Typography
+            variant='h3'
+            className={classes.heading}
+            style={{ marginBottom: '5rem' }}
+          >
+            Our Commerical Customers
+          </Typography>
+
+          <Grid container spacing={0}>
+            <Grid item xs={12} sm={12} md={6} className={classes.gridItem}>
+              <MovingTable data={customerGroupOne} />
             </Grid>
-          </Container>
+            <Grid item xs={12} sm={12} md={6}>
+              <MovingTable data={customerGroupTwo} />
+            </Grid>
+          </Grid>
         </div>
-        <div
-          style={{
-            backgroundColor: '#f8f8f8',
-            padding: '2rem',
-            marginTop: '4rem',
-          }}
-        ></div>
+        <div style={{ padding: '3rem', backgroundColor: '#f8f8f8' }}></div>
       </>
     </>
   )

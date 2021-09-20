@@ -28,10 +28,24 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     textAlign: 'left',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '2vmax',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5vmax',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1vmax',
+    },
   },
   heading: {
     textAlign: 'center',
-    marginBottom: '3rem',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '4vmax',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '2.5vmax',
+    },
   },
   rateBottom: {
     marginTop: '2rem',
@@ -48,6 +62,16 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '1rem',
     textAlign: 'center',
   },
+
+  //Top Of Page
+  pageTitle: {
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '4vmax',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '3vmax',
+    },
+  },
 }))
 
 export default function Services() {
@@ -56,21 +80,23 @@ export default function Services() {
   return (
     <>
       <TopBanner>
-        <Typography variant='h2'>What We Offer</Typography>
+        <Typography variant='h2' className={classes.pageTitle}>
+          What We Offer
+        </Typography>
       </TopBanner>
 
       <>
         <div className={classes.div}>
           <Container maxWidth='lg'>
             <Typography
-              variant='h2'
-              style={{ color: '#CC2936' }}
+              variant='h3'
+              style={{ color: '#CC2936', marginBottom: '4rem' }}
               className={classes.heading}
             >
               Low Cost Storage
             </Typography>
             <Grid container spacing={10}>
-              <Grid item xs={12} sm={6} md={6} className={classes.gridItem}>
+              <Grid item xs={12} sm={12} md={6} className={classes.gridItem}>
                 <Typography variant='h6' className={classes.text}>
                   We offer a state-of-the-art indoor storage facility. All
                   furniture is containerized in 5′ x 7′ x 7′ storage vaults.
@@ -84,7 +110,7 @@ export default function Services() {
                   shrink-wrapped, and stored in our racking system.
                 </Typography>
               </Grid>
-              <Grid item xs={12} sm={6} md={6} className={classes.gridItem}>
+              <Grid item xs={12} sm={12} md={6} className={classes.gridItem}>
                 <Typography variant='h6' className={classes.text}>
                   The warehouse is not open to the public. Furniture can be
                   accessed by appointment only. The customer will receive an
@@ -107,19 +133,68 @@ export default function Services() {
             width: '100%',
             textAlign: 'center',
             margin: 'auto',
-            marginTop: '5rem',
+            marginTop: '2rem',
+          }}
+        >
+          <Container maxWidth='lg'>
+            <Grid container spacing={5}>
+              <Grid item xs={12} sm={6} md={4} className={classes.gridItem}>
+                <Image
+                  src='/images/1.png'
+                  width={'90%'}
+                  height={'90%'}
+                  layout={'responsive'}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} className={classes.gridItem}>
+                <Image
+                  src='/images/2.png'
+                  width={'90%'}
+                  height={'90%'}
+                  layout={'responsive'}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} className={classes.gridItem}>
+                <Image
+                  src='/images/3.png'
+                  width={'90%'}
+                  height={'90%'}
+                  layout={'responsive'}
+                />
+              </Grid>
+            </Grid>
+          </Container>
+        </div>
+
+        <div
+          style={{
+            backgroundColor: '#f8f8f8',
+            padding: '2rem',
+            marginTop: '4rem',
           }}
         >
           <Container maxWidth='lg'>
             <Grid container spacing={10}>
               <Grid item xs={12} md={5} lg={6} className={classes.gridItem}>
-                <Typography variant='h3' style={{ color: '#CC2936' }}>
+                <Typography
+                  className={classes.heading}
+                  variant='h3'
+                  style={{ color: '#CC2936' }}
+                >
                   All furniture is padded
                 </Typography>
-                <Typography variant='h3' style={{ color: '#CC2936' }}>
+                <Typography
+                  className={classes.heading}
+                  variant='h3'
+                  style={{ color: '#CC2936' }}
+                >
                   & rubberbanded in the{' '}
                 </Typography>
-                <Typography variant='h3' style={{ color: '#CC2936' }}>
+                <Typography
+                  className={classes.heading}
+                  variant='h3'
+                  style={{ color: '#CC2936' }}
+                >
                   home before it is moved.
                 </Typography>
               </Grid>
@@ -142,31 +217,29 @@ export default function Services() {
           </Container>
         </div>
 
-        <div
-          style={{
-            backgroundColor: '#f8f8f8',
-            padding: '2rem',
-            marginTop: '4rem',
-          }}
-        >
+        <div style={{ marginTop: '2rem' }}>
           <Container maxWidth='lg'>
-            <Typography variant='h3' className={classes.heading}>
+            <Typography
+              variant='h3'
+              style={{ marginBottom: '2rem' }}
+              className={classes.heading}
+            >
               Our Rates
             </Typography>
             <Grid container spacing={10}>
               <Grid item xs={12} sm={6} md={6} className={classes.gridItem}>
-                <Typography variant='h5' className={classes.rateTitle}>
-                  Moving Rates
-                </Typography>
-                <MovingTable width={'15rem'} data={moving} />
+                <MovingTable
+                  width={'100%'}
+                  title={'Moving Rates'}
+                  data={moving}
+                />
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <Typography variant='h5' className={classes.rateTitle}>
-                  Packing Rates
-                </Typography>
-
-                <MovingTable width={'15rem'} data={packing} />
-
+                <MovingTable
+                  width={'100%'}
+                  title={'Packing Rates'}
+                  data={packing}
+                />
                 <Typography variant='subtitle2' className={classes.packingSub}>
                   All packing includes materials and labor
                 </Typography>
@@ -178,12 +251,7 @@ export default function Services() {
             </Typography>
           </Container>
         </div>
-        <div
-          style={{
-            padding: '2rem',
-            marginTop: '4rem',
-          }}
-        ></div>
+        <div style={{ padding: '3rem', backgroundColor: '#f8f8f8' }}></div>
       </>
     </>
   )

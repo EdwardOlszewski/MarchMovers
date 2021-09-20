@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   imageText: {
     color: '#1B2021',
     [theme.breakpoints.up('xs')]: {
-      fontSize: '3vmax',
+      fontSize: '4vmax',
     },
     [theme.breakpoints.up('lg')]: {
       fontSize: '2vmax',
@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   aboutHeading: {
     color: '#CC2936',
     [theme.breakpoints.up('xs')]: {
-      fontSize: '3vmax',
+      fontSize: '4vmax',
     },
     [theme.breakpoints.up('lg')]: {
       fontSize: '2vmax',
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   aboutText: {
     textAlign: 'left',
     [theme.breakpoints.up('xs')]: {
-      fontSize: '2vmax',
+      fontSize: '2.5vmax',
     },
     [theme.breakpoints.up('md')]: {
       fontSize: '1.5vmax',
@@ -110,15 +110,11 @@ export default function Home() {
               </Grid>
               <Grid item xs={12} sm={7} md={8} className={classes.gridItem}>
                 <Typography variant='h3' className={classes.imageText}>
-                  We will protect your
+                  We will protect your family’s
                 </Typography>
                 <br />
                 <Typography variant='h3' className={classes.imageText}>
-                  family’s possessions
-                </Typography>
-                <br />
-                <Typography variant='h3' className={classes.imageText}>
-                  like a trusted friend
+                  possessions like a trusted friend
                 </Typography>
               </Grid>
             </Grid>
@@ -131,20 +127,17 @@ export default function Home() {
             textAlign: 'center',
             margin: 'auto',
             marginTop: '5rem',
+            paddingBottom: '2rem',
           }}
         >
           <Grid container spacing={10}>
             <Grid item xs={12} md={5} lg={5} className={classes.gridItem}>
-              <Typography variant='h2' className={classes.aboutHeading}>
-                Owned and operated
+              <Typography variant='h3' className={classes.aboutHeading}>
+                Owned and operated by the
               </Typography>
               <br />
-              <Typography variant='h2' className={classes.aboutHeading}>
-                by the March family
-              </Typography>
-              <br />
-              <Typography variant='h2' className={classes.aboutHeading}>
-                since 1957
+              <Typography variant='h3' className={classes.aboutHeading}>
+                March family since 1957
               </Typography>
             </Grid>
             <Grid item xs={12} md={7} lg={7} className={classes.gridItem}>
@@ -166,13 +159,30 @@ export default function Home() {
           </Grid>
         </div>
 
-        <div
-          style={{
-            backgroundColor: '#f8f8f8',
-            padding: '2rem',
-            marginTop: '4rem',
-          }}
-        ></div>
+        <div className={classes.grayDiv}>
+          <Container maxWidth='false' className={classes.container}>
+            <Grid container spacing={5}>
+              <Grid item xs={12} sm={5} md={6} className={classes.gridItem}>
+                <Image
+                  src='/images/4.png'
+                  width={'100%'}
+                  height={'80%'}
+                  layout={'responsive'}
+                />
+              </Grid>
+              <Grid item xs={12} sm={5} md={6} className={classes.gridItem}>
+                <Image
+                  src='/images/5.png'
+                  width={'100%'}
+                  height={'80%'}
+                  layout={'responsive'}
+                />
+              </Grid>
+            </Grid>
+          </Container>
+        </div>
+
+        <div style={{ padding: '3rem' }}></div>
       </>
     </>
   )

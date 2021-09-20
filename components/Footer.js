@@ -54,10 +54,10 @@ export default function BottomAppBar() {
         <Grid container spacing={5}>
           <Grid item md={6}>
             <Grid container className={classes.gridItem}>
-              <Grid item xs={1}>
+              <Grid item xs={2} sm={1}>
                 <PhoneIcon />
               </Grid>
-              <Grid item xs={11}>
+              <Grid item xs={10} sm={11}>
                 <a href='tel:+7084252800'>
                   <Typography variant='subtitle1' className={classes.link}>
                     (708) 425-2800
@@ -67,10 +67,10 @@ export default function BottomAppBar() {
             </Grid>
 
             <Grid container className={classes.gridItem}>
-              <Grid item xs={1}>
+              <Grid item xs={2} sm={1}>
                 <EmailIcon />
               </Grid>
-              <Grid item xs={11}>
+              <Grid item xs={10} sm={11}>
                 <a href='mailto:marchmovers@gmail.com'>
                   <Typography variant='subtitle1' className={classes.link}>
                     marchmovers@gmail.com
@@ -80,10 +80,10 @@ export default function BottomAppBar() {
             </Grid>
 
             <Grid container className={classes.gridItem}>
-              <Grid item xs={1}>
+              <Grid item xs={2} sm={1}>
                 <BusinessIcon />
               </Grid>
-              <Grid item xs={11}>
+              <Grid item xs={10} sm={11}>
                 <a href='http://maps.google.com/?q=10004 S 76th Ave Suite I Bridgeview, IL 60455'>
                   <Typography variant='subtitle1' className={classes.link}>
                     10004 S 76th Ave Suite I Bridgeview, IL 60455

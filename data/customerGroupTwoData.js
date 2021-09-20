@@ -3,16 +3,16 @@ const customerGroupTwo = [
     rate: 'Federal Expres',
   },
   {
-    rate: 'Four Seasons Heating and Air Conditioning',
+    rate: 'Four Seasons Heating & Cooling',
   },
   {
-    rate: 'MacNeal Hospital and Medical Centers',
+    rate: 'MacNeal Hospital & Medical Centers',
   },
   {
     rate: 'Remax Elite',
   },
   {
-    rate: 'Seventh Day Adventist Hospital System',
+    rate: 'Seventh Day Adventist Hospitals',
   },
   {
     rate: 'Standard Bank and Trust',

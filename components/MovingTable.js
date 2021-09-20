@@ -8,31 +8,59 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   table: {
-    minWidth: '100%',
-  },
-  tblContainer: {
     textAlign: 'center',
     margin: 'auto',
-    width: '100%',
+    [theme.breakpoints.up('xs')]: {
+      width: '70vmin',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '50vmin',
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: '40vmin',
+    },
   },
+
   title: {
     flex: '1 1 100%',
   },
-})
+  text: {
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '2vmax',
+    },
 
-export default function BasicTable({ width, title, data }) {
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5vmax',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '1vmax',
+    },
+  },
+  innerDiv: {
+    textAlign: 'left',
+    margin: 'auto',
+    [theme.breakpoints.up('xs')]: {
+      width: '70vmin',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      width: '50vmin',
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: '40vmin',
+    },
+  },
+}))
+
+export default function BasicTable({ title, data }) {
   const classes = useStyles()
 
   console.log(data)
 
   return (
-    <TableContainer
-      component={Paper}
-      elevation={0}
-      className={classes.tblContainer}
-    >
+    <TableContainer component={Paper} elevation={0}>
       <Table className={classes.table} aria-label='simple table'>
         <Typography
           className={classes.title}
@@ -42,18 +70,16 @@ export default function BasicTable({ width, title, data }) {
         >
           {title}
         </Typography>
+
         <TableBody>
           {data.map((info) => (
             <TableRow key={info.rate}>
-              <TableCell style={{ borderColor: '#f2f2f2' }} align='center'>
-                <Container
-                  style={{
-                    textAlign: 'left',
-                    width,
-                  }}
-                >
-                  <Typography variant='subtitle1'>{info.rate}</Typography>
-                </Container>
+              <TableCell style={{ borderColor: '#f2f2f2' }}>
+                <div className={classes.innerDiv}>
+                  <Typography variant='subtitle1' className={classes.text}>
+                    {info.rate}
+                  </Typography>
+                </div>
               </TableCell>
             </TableRow>
           ))}
