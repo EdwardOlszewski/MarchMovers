@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   //Top Of Page
   pageTitle: {
     [theme.breakpoints.up('xs')]: {
-      fontSize: '4vmax',
+      fontSize: '5vmax',
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '3vmax',

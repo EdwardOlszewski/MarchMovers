@@ -14,18 +14,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     padding: '0rem 1rem 0rem 1rem',
   },
-  imageText: {
-    [theme.breakpoints.up('md')]: {
-      marginTop: '-6rem',
-    },
-    [theme.breakpoints.only('sm')]: {
-      fontSize: '5vw',
-    },
-    [theme.breakpoints.only('xs')]: {
-      marginTop: '2rem',
-      fontSize: '7vw',
-    },
-  },
+
   text: {
     textAlign: 'left',
     [theme.breakpoints.up('xs')]: {
@@ -66,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   //Top Of Page
   pageTitle: {
     [theme.breakpoints.up('xs')]: {
-      fontSize: '4vmax',
+      fontSize: '5vmax',
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '3vmax',

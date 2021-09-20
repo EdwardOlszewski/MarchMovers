@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     [theme.breakpoints.up('xs')]: {
-      height: '250px',
+      height: '300px',
     },
     [theme.breakpoints.up('md')]: {
       height: '300px',
