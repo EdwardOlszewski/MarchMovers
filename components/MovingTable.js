@@ -57,8 +57,6 @@ const useStyles = makeStyles((theme) => ({
 export default function BasicTable({ title, data }) {
   const classes = useStyles()
 
-  console.log(data)
-
   return (
     <TableContainer component={Paper} elevation={0}>
       <Table className={classes.table} aria-label='simple table'>

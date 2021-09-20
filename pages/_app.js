@@ -6,7 +6,6 @@ import { Paper, ThemeProvider } from '@material-ui/core'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import theme from '../styles/theme'
 import '../styles/globals.css'
-//components
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 

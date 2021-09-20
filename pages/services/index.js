@@ -6,15 +6,11 @@ import moving from '../../data/movingData'
 import packing from '../../data/packingData'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   gridItem: {
     margin: 'auto',
     textAlign: 'center',
     padding: '0rem 1rem 0rem 1rem',
   },
-
   text: {
     textAlign: 'left',
     [theme.breakpoints.up('xs')]: {
@@ -41,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '2rem',
     textAlign: 'center',
   },
-  rateTitle: { paddingBottom: '1rem', textAlign: 'center' },
   div: {
     backgroundColor: '#f8f8f8',
     paddingTop: '2rem',

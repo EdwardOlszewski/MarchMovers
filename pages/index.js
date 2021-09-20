@@ -1,10 +1,4 @@
-import {
-  Typography,
-  Paper,
-  makeStyles,
-  Container,
-  Grid,
-} from '@material-ui/core'
+import { Typography, makeStyles, Container, Grid } from '@material-ui/core'
 import TopBanner from '../components/TopBanner'
 import Image from 'next/image'
 

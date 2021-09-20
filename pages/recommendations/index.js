@@ -1,19 +1,10 @@
 import { Typography, makeStyles, Container, Grid } from '@material-ui/core'
 import TopBanner from '../../components/TopBanner'
-import Image from 'next/image'
 import MovingTable from '../../components/MovingTable'
-import moving from '../../data/movingData'
-import packing from '../../data/packingData'
 import customerGroupOne from '../../data/customerGroupOneData'
 import customerGroupTwo from '../../data/customerGroupTwoData'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  title: {
-    display: 'inline-block',
-  },
   gridItem: {
     margin: 'auto',
     textAlign: 'center',
@@ -43,13 +34,11 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '2rem',
     textAlign: 'center',
   },
-  rateTitle: { paddingBottom: '1rem', textAlign: 'center' },
   div: {
     backgroundColor: '#f8f8f8',
     paddingTop: '2rem',
     paddingBottom: '2rem',
   },
-
   heading: {
     textAlign: 'center',
     [theme.breakpoints.up('xs')]: {
@@ -65,8 +54,6 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '2.5vmax',
     },
   },
-
-  //Top Of Page
   pageTitle: {
     [theme.breakpoints.up('xs')]: {
       fontSize: '5vmax',
