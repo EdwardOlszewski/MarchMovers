@@ -2,8 +2,6 @@ import { Typography, makeStyles, Container, Grid } from '@material-ui/core'
 import TopBanner from '../../components/TopBanner'
 import Image from 'next/image'
 import MovingTable from '../../components/MovingTable'
-import moving from '../../data/movingData'
-import packing from '../../data/packingData'
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -58,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Services() {
+export default function Services({ movingRates, packingRates }) {
   const classes = useStyles()
 
   return (
@@ -117,7 +115,7 @@ export default function Services() {
             width: '100%',
             textAlign: 'center',
             margin: 'auto',
-            marginTop: '2rem',
+            marginTop: '3rem',
           }}
         >
           <Container maxWidth='lg'>
@@ -126,7 +124,7 @@ export default function Services() {
                 <Image
                   src='/images/1.png'
                   width={'90%'}
-                  height={'90%'}
+                  height={'80%'}
                   layout={'responsive'}
                 />
               </Grid>
@@ -134,7 +132,7 @@ export default function Services() {
                 <Image
                   src='/images/2.png'
                   width={'90%'}
-                  height={'90%'}
+                  height={'80%'}
                   layout={'responsive'}
                 />
               </Grid>
@@ -142,7 +140,7 @@ export default function Services() {
                 <Image
                   src='/images/3.png'
                   width={'90%'}
-                  height={'90%'}
+                  height={'80%'}
                   layout={'responsive'}
                 />
               </Grid>
@@ -215,14 +213,14 @@ export default function Services() {
                 <MovingTable
                   width={'100%'}
                   title={'Moving Rates'}
-                  data={moving}
+                  data={movingRates.data}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
                 <MovingTable
                   width={'100%'}
                   title={'Packing Rates'}
-                  data={packing}
+                  data={packingRates.data}
                 />
                 <Typography variant='subtitle2' className={classes.packingSub}>
                   All packing includes materials and labor
@@ -239,4 +237,18 @@ export default function Services() {
       </>
     </>
   )
+}
+
+export const getServerSideProps = async () => {
+  const [movingRatesRes, packingRatesRes] = await Promise.all([
+    fetch(`http://localhost:3000/api/movingrates`),
+    fetch(`http://localhost:3000/api/packingrates`),
+  ])
+
+  const [movingRates, packingRates] = await Promise.all([
+    movingRatesRes.json(),
+    packingRatesRes.json(),
+  ])
+
+  return { props: { movingRates, packingRates } }
 }

@@ -1,8 +1,6 @@
 import { Typography, makeStyles, Container, Grid } from '@material-ui/core'
 import TopBanner from '../../components/TopBanner'
 import MovingTable from '../../components/MovingTable'
-import customerGroupOne from '../../data/customerGroupOneData'
-import customerGroupTwo from '../../data/customerGroupTwoData'
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -36,8 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   div: {
     backgroundColor: '#f8f8f8',
-    paddingTop: '2rem',
-    paddingBottom: '2rem',
+    paddingBottom: '3rem',
   },
   heading: {
     textAlign: 'center',
@@ -64,8 +61,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Recommendations() {
+export default function Recommendations({ companies }) {
   const classes = useStyles()
+  let dataArray1 = []
+  let dataArray2 = []
+  const mainArrayLenght = companies.length
+
+  for (let i = 0; i < mainArrayLenght; i++) {
+    if (i < mainArrayLenght / 2) {
+      dataArray1[i] = companies[i]
+    } else {
+      dataArray2[i] = companies[i]
+    }
+  }
 
   return (
     <>
@@ -103,7 +111,8 @@ export default function Recommendations() {
         <div
           style={{
             padding: '1rem',
-            marginTop: '4rem',
+            marginTop: '3rem',
+            marginBottom: '2rem',
           }}
         >
           <Typography
@@ -116,10 +125,10 @@ export default function Recommendations() {
 
           <Grid container spacing={0}>
             <Grid item xs={12} sm={12} md={6} className={classes.gridItem}>
-              <MovingTable data={customerGroupOne} />
+              <MovingTable data={dataArray1} />
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
-              <MovingTable data={customerGroupTwo} />
+              <MovingTable data={dataArray2} />
             </Grid>
           </Grid>
         </div>
@@ -127,4 +136,15 @@ export default function Recommendations() {
       </>
     </>
   )
+}
+
+export const getServerSideProps = async () => {
+  const res = await fetch('http://localhost:3000/api/companies')
+  const { data } = await res.json()
+
+  return {
+    props: {
+      companies: data,
+    },
+  }
 }

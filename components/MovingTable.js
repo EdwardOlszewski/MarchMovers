@@ -75,7 +75,7 @@ export default function BasicTable({ title, data }) {
               <TableCell style={{ borderColor: '#f2f2f2' }}>
                 <div className={classes.innerDiv}>
                   <Typography variant='subtitle1' className={classes.text}>
-                    {info.rate}
+                    {info.name}
                   </Typography>
                 </div>
               </TableCell>
