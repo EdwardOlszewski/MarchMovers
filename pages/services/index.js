@@ -2,10 +2,6 @@ import { Typography, makeStyles, Container, Grid } from '@material-ui/core'
 import TopBanner from '../../components/TopBanner'
 import Image from 'next/image'
 import MovingTable from '../../components/MovingTable'
-import dotenv from 'dotenv'
-
-// Init dotenv
-dotenv.config()
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
