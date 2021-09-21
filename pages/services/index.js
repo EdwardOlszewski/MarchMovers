@@ -174,7 +174,7 @@ export default function Services({ movingRates, packingRates }) {
                   variant='h3'
                   style={{ color: '#CC2936' }}
                 >
-                  & rubberbanded in the{' '}
+                  & rubberbanded in the
                 </Typography>
                 <Typography
                   className={classes.heading}
