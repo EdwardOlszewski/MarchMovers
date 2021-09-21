@@ -2,6 +2,10 @@ import { Typography, makeStyles, Container, Grid } from '@material-ui/core'
 import TopBanner from '../../components/TopBanner'
 import Image from 'next/image'
 import MovingTable from '../../components/MovingTable'
+import dotenv from 'dotenv'
+
+// Init dotenv
+dotenv.config()
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -241,8 +245,8 @@ export default function Services({ movingRates, packingRates }) {
 
 export const getServerSideProps = async () => {
   const [movingRatesRes, packingRatesRes] = await Promise.all([
-    fetch(`http://localhost:3000/api/movingrates`),
-    fetch(`http://localhost:3000/api/packingrates`),
+    fetch(`${process.env.PRODUCTION_URL}/api/movingrates`),
+    fetch(`${process.env.PRODUCTION_URL}/api/packingrates`),
   ])
 
   const [movingRates, packingRates] = await Promise.all([

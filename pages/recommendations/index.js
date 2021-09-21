@@ -1,6 +1,10 @@
 import { Typography, makeStyles, Container, Grid } from '@material-ui/core'
 import TopBanner from '../../components/TopBanner'
 import MovingTable from '../../components/MovingTable'
+import dotenv from 'dotenv'
+
+// Init dotenv
+dotenv.config()
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -139,7 +143,7 @@ export default function Recommendations({ companies }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch('http://localhost:3000/api/companies')
+  const res = await fetch(`${process.env.PRODUCTION_URL}/api/companies`)
   const { data } = await res.json()
 
   return {
