@@ -256,7 +256,7 @@ export default function Services({ movingRates, packingRates }) {
               >
                 <Typography variant='h5' className={classes.text}>
                   We offer hoisting serivces on large bulk items. Couches, large
-                  Tv's, etc..
+                  Tv&apos;s, etc..
                 </Typography>
               </Grid>
             </Grid>
