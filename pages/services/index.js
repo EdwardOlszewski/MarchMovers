@@ -2,50 +2,45 @@ import { Typography, makeStyles, Container, Grid } from '@material-ui/core'
 import TopBanner from '../../components/TopBanner'
 import Image from 'next/image'
 import MovingTable from '../../components/MovingTable'
+import Head from 'next/head'
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
     margin: 'auto',
     textAlign: 'center',
-    padding: '0rem 1rem 0rem 1rem',
   },
   text: {
     textAlign: 'left',
-    [theme.breakpoints.up('xs')]: {
-      fontSize: '3vmax',
-    },
-    [theme.breakpoints.up('md')]: {
-      fontSize: '2vmax',
-    },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: '1vmax',
-    },
+    fontWeight: 1,
   },
   heading: {
     textAlign: 'center',
-    [theme.breakpoints.up('xs')]: {
-      fontSize: '4vmax',
-    },
-    [theme.breakpoints.up('xl')]: {
-      fontSize: '2.5vmax',
-    },
+    paddingTop: '2rem',
   },
   rateBottom: {
-    marginTop: '2rem',
-    marginBottom: '2rem',
-    textAlign: 'center',
+    textAlign: 'left',
+    padding: '.5rem',
+    fontWeight: 1,
   },
   div: {
     backgroundColor: '#f8f8f8',
-    paddingTop: '2rem',
+
     paddingBottom: '2rem',
   },
   packingSub: {
     marginTop: '1rem',
     textAlign: 'center',
   },
-
-  //Top Of Page
+  serviceList: {
+    color: '#CC2936',
+  },
+  btmRateContainer: {
+    marginTop: '2rem',
+    paddingBottom: '2rem',
+    [theme.breakpoints.up('lg')]: {
+      width: '90%',
+    },
+  },
   pageTitle: {
     [theme.breakpoints.up('xs')]: {
       fontSize: '5vmax',
@@ -61,6 +56,9 @@ export default function Services({ movingRates, packingRates }) {
 
   return (
     <>
+      <Head>
+        <title>Services</title>
+      </Head>
       <TopBanner>
         <Typography variant='h2' className={classes.pageTitle}>
           What We Offer
@@ -79,7 +77,7 @@ export default function Services({ movingRates, packingRates }) {
             </Typography>
             <Grid container spacing={10}>
               <Grid item xs={12} sm={12} md={6} className={classes.gridItem}>
-                <Typography variant='h6' className={classes.text}>
+                <Typography variant='h5' className={classes.text}>
                   We offer a state-of-the-art indoor storage facility. All
                   furniture is containerized in 5′ x 7′ x 7′ storage vaults.
                   Each vault will hold approximately one room of furniture.
@@ -93,7 +91,7 @@ export default function Services({ movingRates, packingRates }) {
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={12} md={6} className={classes.gridItem}>
-                <Typography variant='h6' className={classes.text}>
+                <Typography variant='h5' className={classes.text}>
                   The warehouse is not open to the public. Furniture can be
                   accessed by appointment only. The customer will receive an
                   itemized list of all items stored and the condition of these
@@ -116,31 +114,32 @@ export default function Services({ movingRates, packingRates }) {
             textAlign: 'center',
             margin: 'auto',
             marginTop: '3rem',
+            marginBottom: '3rem',
           }}
         >
           <Container maxWidth='lg'>
             <Grid container spacing={5}>
-              <Grid item xs={12} sm={6} md={4} className={classes.gridItem}>
+              <Grid item xs={10} sm={5} md={4} className={classes.gridItem}>
                 <Image
                   src='/images/1.png'
                   width={'90%'}
-                  height={'80%'}
+                  height={'70%'}
                   layout={'responsive'}
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={4} className={classes.gridItem}>
+              <Grid item xs={10} sm={5} md={4} className={classes.gridItem}>
                 <Image
                   src='/images/2.png'
                   width={'90%'}
-                  height={'80%'}
+                  height={'70%'}
                   layout={'responsive'}
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={4} className={classes.gridItem}>
+              <Grid item xs={10} sm={5} md={4} className={classes.gridItem}>
                 <Image
                   src='/images/3.png'
                   width={'90%'}
-                  height={'80%'}
+                  height={'70%'}
                   layout={'responsive'}
                 />
               </Grid>
@@ -152,47 +151,109 @@ export default function Services({ movingRates, packingRates }) {
           style={{
             backgroundColor: '#f8f8f8',
             padding: '2rem',
-            marginTop: '4rem',
+            paddingTop: '4rem',
           }}
         >
           <Container maxWidth='lg'>
-            <Grid container spacing={10}>
-              <Grid item xs={12} md={5} lg={6} className={classes.gridItem}>
-                <Typography
-                  className={classes.heading}
-                  variant='h3'
-                  style={{ color: '#CC2936' }}
-                >
-                  All furniture is padded
-                </Typography>
-                <Typography
-                  className={classes.heading}
-                  variant='h3'
-                  style={{ color: '#CC2936' }}
-                >
-                  & rubberbanded in the
-                </Typography>
-                <Typography
-                  className={classes.heading}
-                  variant='h3'
-                  style={{ color: '#CC2936' }}
-                >
-                  home before it is moved.
+            <Grid container spacing={1}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={5}
+                lg={6}
+                className={classes.gridItem}
+              >
+                <Typography className={classes.serviceList} variant='h4'>
+                  Expert Packing
                 </Typography>
               </Grid>
-              <Grid item xs={12} md={7} lg={6} className={classes.gridItem}>
-                <Typography variant='h6' className={classes.text}>
-                  Services include expert packing, specializing in pianos,
-                  organs and big screen TVs. Over the years, many piano stores
-                  have used our services for pianos that their moving crews
-                  couldn’t deliver. We also offer hoisting services for large
-                  items such as couches, dressers, etc. We offer clothing
-                  wardrobe rental for the day at no charge. Also, all furniture
-                  will be protected at no charge. Local moving charges will be
-                  based on our time with you plus our time to and from your
-                  pickup and delivery addresses. Long distance moving will be
-                  based on weight of the shipment and miles between the origin
-                  and destination.
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={7}
+                lg={6}
+                className={classes.gridItem}
+              >
+                <Typography variant='h5' className={classes.text}>
+                  All furniture is padded & rubberbanded in the home before it
+                  is moved.
+                </Typography>
+              </Grid>
+            </Grid>
+          </Container>
+        </div>
+
+        <div
+          style={{
+            backgroundColor: '#f8f8f8',
+            padding: '2rem',
+            paddingTop: '4rem',
+          }}
+        >
+          <Container maxWidth='lg'>
+            <Grid container spacing={1}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={5}
+                lg={6}
+                className={classes.gridItem}
+              >
+                <Typography className={classes.serviceList} variant='h4'>
+                  Pianos & Organs
+                </Typography>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={7}
+                lg={6}
+                className={classes.gridItem}
+              >
+                <Typography variant='h5' className={classes.text}>
+                  Over the years, many piano companies have used our services
+                  for pianos that their moving crews couldn’t deliver.
+                </Typography>
+              </Grid>
+            </Grid>
+          </Container>
+        </div>
+        <div
+          style={{
+            backgroundColor: '#f8f8f8',
+            padding: '2rem',
+            paddingTop: '4rem',
+          }}
+        >
+          <Container maxWidth='lg'>
+            <Grid container spacing={1}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={5}
+                lg={6}
+                className={classes.gridItem}
+              >
+                <Typography className={classes.serviceList} variant='h4'>
+                  Hoisting services
+                </Typography>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={7}
+                lg={6}
+                className={classes.gridItem}
+              >
+                <Typography variant='h5' className={classes.text}>
+                  We offer hoisting serivces on large bulk items. Couches, large
+                  Tv's, etc..
                 </Typography>
               </Grid>
             </Grid>
@@ -202,8 +263,8 @@ export default function Services({ movingRates, packingRates }) {
         <div style={{ marginTop: '2rem' }}>
           <Container maxWidth='lg'>
             <Typography
-              variant='h3'
-              style={{ marginBottom: '2rem' }}
+              variant='h4'
+              style={{ marginBottom: '4rem' }}
               className={classes.heading}
             >
               Our Rates
@@ -227,10 +288,20 @@ export default function Services({ movingRates, packingRates }) {
                 </Typography>
               </Grid>
             </Grid>
-            <Typography variant='h6' className={classes.rateBottom}>
-              * Travel times based on Bridgeview, IL to origin city and
-              destination city back to Bridgeview, IL. *
-            </Typography>
+            <Container className={classes.btmRateContainer}>
+              <Typography variant='subtitle1' className={classes.rateBottom}>
+                * Travel times based on Bridgeview, IL to origin city and
+                destination city back to Bridgeview, IL.
+              </Typography>
+              <Typography variant='subtitle1' className={classes.rateBottom}>
+                * Local moving charges will be based on our time with you plus
+                our time to and from your pickup and delivery addresses.
+              </Typography>
+              <Typography variant='subtitle1' className={classes.rateBottom}>
+                * Long distance moving will be based on weight of the shipment
+                and miles between the origin and destination.
+              </Typography>
+            </Container>
           </Container>
         </div>
         <div style={{ padding: '3rem', backgroundColor: '#f8f8f8' }}></div>

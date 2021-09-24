@@ -1,6 +1,7 @@
 import { Typography, makeStyles, Container, Grid } from '@material-ui/core'
 import TopBanner from '../../components/TopBanner'
 import MovingTable from '../../components/MovingTable'
+import Head from 'next/head'
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -8,56 +9,17 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     padding: '0rem 1rem 0rem 1rem',
   },
-  imageText: {
-    [theme.breakpoints.up('md')]: {
-      marginTop: '-6rem',
-    },
-    [theme.breakpoints.only('sm')]: {
-      fontSize: '5vw',
-    },
-    [theme.breakpoints.only('xs')]: {
-      marginTop: '2rem',
-      fontSize: '7vw',
-    },
-  },
-  text: {
-    textAlign: 'left',
-  },
   heading: {
     textAlign: 'center',
     marginBottom: '3rem',
-  },
-  rateBottom: {
-    marginTop: '2rem',
-    marginBottom: '2rem',
-    textAlign: 'center',
   },
   div: {
     backgroundColor: '#f8f8f8',
     paddingBottom: '3rem',
   },
-  heading: {
-    textAlign: 'center',
-    [theme.breakpoints.up('xs')]: {
-      fontSize: '5vmax',
-    },
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '4vmax',
-    },
-    [theme.breakpoints.up('md')]: {
-      fontSize: '3vmax',
-    },
-    [theme.breakpoints.up('xl')]: {
-      fontSize: '2.5vmax',
-    },
-  },
-  pageTitle: {
-    [theme.breakpoints.up('xs')]: {
-      fontSize: '5vmax',
-    },
-    [theme.breakpoints.up('xl')]: {
-      fontSize: '3vmax',
-    },
+  text: {
+    textAlign: 'left',
+    fontWeight: 1,
   },
 }))
 
@@ -77,12 +39,15 @@ export default function Recommendations({ companies }) {
 
   return (
     <>
+      {' '}
+      <Head>
+        <title>Testimonials</title>
+      </Head>
       <TopBanner>
         <Typography variant='h2' className={classes.pageTitle}>
           Testimonials
         </Typography>
       </TopBanner>
-
       <>
         <div className={classes.div}>
           <Container maxWidth='lg'>
@@ -96,7 +61,7 @@ export default function Recommendations({ companies }) {
                 </Typography>
               </Grid>
               <Grid item xs={12} md={7} lg={6} className={classes.gridItem}>
-                <Typography variant='h6' className={classes.text}>
+                <Typography variant='h5' className={classes.text}>
                   Over the years we have successfully moved some of the most
                   affluent families in Illinois. Because of the privacy act we
                   cannot list the names of these people. Many of the top real

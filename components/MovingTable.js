@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   table: {
     textAlign: 'center',
     margin: 'auto',
+
     [theme.breakpoints.up('xs')]: {
       width: '70vmin',
     },
@@ -41,8 +42,9 @@ const useStyles = makeStyles((theme) => ({
   innerDiv: {
     textAlign: 'left',
     margin: 'auto',
+
     [theme.breakpoints.up('xs')]: {
-      width: '70vmin',
+      width: '60vmin',
     },
 
     [theme.breakpoints.up('md')]: {
@@ -52,13 +54,20 @@ const useStyles = makeStyles((theme) => ({
       width: '40vmin',
     },
   },
+  tblContainer: {
+    overflow: 'hidden',
+  },
 }))
 
 export default function BasicTable({ title, data }) {
   const classes = useStyles()
 
   return (
-    <TableContainer component={Paper} elevation={0}>
+    <TableContainer
+      component={Paper}
+      elevation={0}
+      className={classes.tblContainer}
+    >
       <Table className={classes.table} aria-label='simple table'>
         <Typography
           className={classes.title}

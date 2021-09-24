@@ -43,13 +43,13 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     color: '#CC2936',
     [theme.breakpoints.up('xs')]: {
-      fontSize: '3.5vmax',
+      fontSize: '4.5vmax',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '3vmax',
+      fontSize: '3.5vmax',
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: '2vmax',
+      fontSize: '2.5vmax',
     },
   },
 }))

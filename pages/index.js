@@ -15,15 +15,18 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#f8f8f8',
     padding: '2rem 0rem 2rem 0rem',
   },
+  whiteDiv: {
+    padding: '2rem 0rem 2rem 0rem',
+  },
   container: {
     [theme.breakpoints.up('xs')]: {
-      width: '90%',
+      width: '100%',
     },
     [theme.breakpoints.up('md')]: {
-      width: '80%',
+      width: '100%',
     },
     [theme.breakpoints.up('xl')]: {
-      width: '60%',
+      width: '70%',
     },
   },
 
@@ -37,38 +40,20 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  //Image Area
   imageText: {
-    color: '#1B2021',
-    [theme.breakpoints.up('xs')]: {
-      fontSize: '4vmax',
-    },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: '2vmax',
-    },
+    paddingTop: '1rem',
   },
 
-  //About Area
-  aboutHeading: {
-    color: '#CC2936',
-    [theme.breakpoints.up('xs')]: {
-      fontSize: '4vmax',
-    },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: '2vmax',
-    },
-  },
-  aboutText: {
+  text: {
     textAlign: 'left',
-    [theme.breakpoints.up('xs')]: {
-      fontSize: '3vmax',
-    },
-    [theme.breakpoints.up('md')]: {
-      fontSize: '2vmax',
-    },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: '1.3vmax',
-    },
+
+    fontWeight: 1,
+  },
+  bannerText: {
+    color: 'white',
+  },
+  textContainer: {
+    paddingTop: '5rem',
   },
 }))
 
@@ -77,8 +62,103 @@ export default function Home() {
 
   return (
     <>
-      <TopBanner id='back-to-top-anchor'>
-        <Typography variant='h2' className={classes.pageTitle}>
+      <TopBanner id='back-to-top-anchor' />
+
+      <>
+        <div className={classes.grayDiv}>
+          <Container maxWidth='false' className={classes.container}>
+            <Grid container spacing={3}>
+              <Grid
+                item
+                xs={10}
+                sm={5}
+                md={4}
+                lg={3}
+                className={classes.gridItem}
+              >
+                <Grid>
+                  <Image
+                    src='/images/familyPic.png'
+                    width={'90%'}
+                    height={'100%'}
+                    layout={'responsive'}
+                  />
+                </Grid>
+
+                <Grid>
+                  <Typography variant='h6' className={classes.imageText}>
+                    We will protect your family’s possessions like a trusted
+                    friend
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Grid item xs={12} md={8} lg={8} className={classes.gridItem}>
+                <Grid item>
+                  <Typography variant='h4'>
+                    March Family Owned & Operated Since 1957
+                  </Typography>
+                </Grid>
+                <br />
+                <Grid item>
+                  <Typography variant='h5' className={classes.text}>
+                    Charles J March Sr. became licensed by the Illinois Commerce
+                    Commission in 1957. Mr. March came from a family of 8 boys
+                    and 7 girls of which all 8 boys started their working
+                    careers in the moving business. Charles March Sr.’s father,
+                    Percy March, and father-in-law, Heber Davis, both retired as
+                    movers in the late 1950s.
+                  </Typography>
+                </Grid>
+                <br />
+
+                <Grid>
+                  <Typography variant='h5' className={classes.text}>
+                    Charles March Sr. also had a large family of his own: Bob,
+                    the oldest, Jim, Jerry, John, Chuck Jr., and Cammie. All of
+                    them worked for the family business some time during their
+                    lives. Chuck Jr. purchased the company in 1990 and has owned
+                    and operated it since. Charles J March Sr. would often show
+                    up at moving jobs to make sure that all of the furniture was
+                    padded and rubber banded correctly.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Container>
+        </div>
+
+        <div className={classes.whiteDiv}>
+          <Container maxWidth='false' className={classes.container}>
+            <Grid container spacing={1}>
+              <Grid item xs={11} sm={6} md={5} className={classes.gridItem}>
+                <Image
+                  src='/images/4.png'
+                  width={'100%'}
+                  height={'70%'}
+                  layout={'responsive'}
+                />
+              </Grid>
+              <Grid item xs={11} sm={6} md={5} className={classes.gridItem}>
+                <Image
+                  src='/images/5.png'
+                  width={'100%'}
+                  height={'70%'}
+                  layout={'responsive'}
+                />
+              </Grid>
+            </Grid>
+          </Container>
+        </div>
+
+        <div className={classes.grayDiv}></div>
+      </>
+    </>
+  )
+}
+
+/*
+
+  <Typography variant='h2' className={classes.pageTitle}>
           Family owned &
         </Typography>
         <Typography
@@ -88,21 +168,10 @@ export default function Home() {
         >
           operated since 1957
         </Typography>
-      </TopBanner>
 
-      <>
-        <div className={classes.grayDiv}>
-          <Container maxWidth='false' className={classes.container}>
-            <Grid container spacing={3}>
-              <Grid item xs={12} sm={5} md={4} className={classes.gridItem}>
-                <Image
-                  src='/images/familyPic.png'
-                  width={'90%'}
-                  height={'100%'}
-                  layout={'responsive'}
-                />
-              </Grid>
-              <Grid item xs={12} sm={7} md={8} className={classes.gridItem}>
+
+
+<Grid item xs={12} sm={7} md={8} className={classes.gridItem}>
                 <Typography variant='h3' className={classes.imageText}>
                   We will protect your family’s
                 </Typography>
@@ -111,73 +180,15 @@ export default function Home() {
                   possessions like a trusted friend
                 </Typography>
               </Grid>
-            </Grid>
-          </Container>
-        </div>
 
-        <div
-          style={{
-            width: '90%',
-            textAlign: 'center',
-            margin: 'auto',
-            marginTop: '5rem',
-            paddingBottom: '2rem',
-          }}
-        >
-          <Grid container spacing={10}>
-            <Grid item xs={12} md={5} lg={5} className={classes.gridItem}>
-              <Typography variant='h3' className={classes.aboutHeading}>
-                Owned and operated by the
-              </Typography>
-              <br />
-              <Typography variant='h3' className={classes.aboutHeading}>
-                March family since 1957
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={7} lg={7} className={classes.gridItem}>
-              <Typography variant='h5' className={classes.aboutText}>
-                Charles J March Sr. became licensed by the Illinois Commerce
-                Commission in 1957. Mr. March came from a family of 8 boys and 7
-                girls of which all 8 boys started their working careers in the
-                moving business. Charles March Sr.’s father, Percy March, and
-                father-in-law, Heber Davis, both retired as movers in the late
-                1950s. Charles March Sr. also had a large family of his own:
-                Bob, the oldest, Jim, Jerry, John, Chuck Jr., and Cammie. All of
-                them worked for the family business some time during their
-                lives. Chuck Jr. purchased the company in 1990 and has owned and
-                operated it since. Charles J March Sr. would often show up at
-                moving jobs to make sure that all of the furniture was padded
-                and rubber banded correctly.
-              </Typography>
-            </Grid>
-          </Grid>
-        </div>
 
-        <div className={classes.grayDiv}>
-          <Container maxWidth='false' className={classes.container}>
-            <Grid container spacing={5}>
-              <Grid item xs={12} sm={5} md={6} className={classes.gridItem}>
-                <Image
-                  src='/images/4.png'
-                  width={'100%'}
-                  height={'80%'}
-                  layout={'responsive'}
-                />
-              </Grid>
-              <Grid item xs={12} sm={5} md={6} className={classes.gridItem}>
-                <Image
-                  src='/images/5.png'
-                  width={'100%'}
-                  height={'80%'}
-                  layout={'responsive'}
-                />
-              </Grid>
-            </Grid>
-          </Container>
-        </div>
 
-        <div style={{ padding: '3rem' }}></div>
-      </>
-    </>
-  )
-}
+
+                   <Image
+          src='/images/path.jpg'
+          width={'100%'}
+          height={'20%'}
+          layout={'responsive'}
+        />
+
+*/

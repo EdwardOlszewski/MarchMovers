@@ -18,6 +18,13 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     margin: 'auto',
     paddingTop: '7rem',
+    paddingBottom: '3rem',
+  },
+  bannerText: {
+    color: 'white',
+  },
+  textContainer: {
+    paddingTop: '5rem',
   },
 }))
 
@@ -25,8 +32,19 @@ export default function ButtonAppBar({ children }) {
   const classes = useStyles()
 
   return (
-    <Paper className={classes.root} elevation={0}>
-      <Container className={classes.title}>{children}</Container>
+    <Paper elevation={0}>
+      <Container className={classes.title}>
+        <div className='mainTitle'>
+          <div className={classes.textContainer}>
+            <Typography variant='h5' className={classes.bannerText}>
+              sometimes it's a long way home,
+            </Typography>
+            <Typography variant='h5' className={classes.bannerText}>
+              but we'll get you there safely.
+            </Typography>
+          </div>
+        </div>
+      </Container>
     </Paper>
   )
 }
