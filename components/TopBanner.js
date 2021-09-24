@@ -37,10 +37,10 @@ export default function ButtonAppBar({ children }) {
         <div className='mainTitle'>
           <div className={classes.textContainer}>
             <Typography variant='h5' className={classes.bannerText}>
-              sometimes it's a long way home,
+              sometimes it&apos;s a long way home,
             </Typography>
             <Typography variant='h5' className={classes.bannerText}>
-              but we'll get you there safely.
+              but we&apos;ll get you there safely.
             </Typography>
           </div>
         </div>

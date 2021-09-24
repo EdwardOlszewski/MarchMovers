@@ -3,7 +3,7 @@ import Company from '../../../models/Company'
 
 dbConnect()
 
-export default async (req, res) => {
+export default async function index(req, res) {
   const { method } = req
 
   switch (method) {

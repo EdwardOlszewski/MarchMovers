@@ -3,7 +3,7 @@ import PackingRates from '../../../models/PackingRates'
 
 dbConnect()
 
-export default async (req, res) => {
+export default async function index(req, res) {
   const { method } = req
 
   switch (method) {

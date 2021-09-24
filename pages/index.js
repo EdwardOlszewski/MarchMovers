@@ -82,6 +82,7 @@ export default function Home() {
                     width={'90%'}
                     height={'100%'}
                     layout={'responsive'}
+                    alt='familyPicture'
                   />
                 </Grid>
 
@@ -136,6 +137,7 @@ export default function Home() {
                   width={'100%'}
                   height={'70%'}
                   layout={'responsive'}
+                  alt='truckPicture'
                 />
               </Grid>
               <Grid item xs={11} sm={6} md={5} className={classes.gridItem}>
@@ -144,6 +146,7 @@ export default function Home() {
                   width={'100%'}
                   height={'70%'}
                   layout={'responsive'}
+                  alt='truckPicture2'
                 />
               </Grid>
             </Grid>

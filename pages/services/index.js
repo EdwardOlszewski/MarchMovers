@@ -125,6 +125,7 @@ export default function Services({ movingRates, packingRates }) {
                   width={'90%'}
                   height={'70%'}
                   layout={'responsive'}
+                  alt='storagePicture1'
                 />
               </Grid>
               <Grid item xs={10} sm={5} md={4} className={classes.gridItem}>
@@ -133,6 +134,7 @@ export default function Services({ movingRates, packingRates }) {
                   width={'90%'}
                   height={'70%'}
                   layout={'responsive'}
+                  alt='storagePicture2'
                 />
               </Grid>
               <Grid item xs={10} sm={5} md={4} className={classes.gridItem}>
@@ -141,6 +143,7 @@ export default function Services({ movingRates, packingRates }) {
                   width={'90%'}
                   height={'70%'}
                   layout={'responsive'}
+                  alt='storagePicture3'
                 />
               </Grid>
             </Grid>
@@ -216,7 +219,7 @@ export default function Services({ movingRates, packingRates }) {
               >
                 <Typography variant='h5' className={classes.text}>
                   Over the years, many piano companies have used our services
-                  for pianos that their moving crews couldn’t deliver.
+                  for pianos that their moving crews couldn&apos;t deliver.
                 </Typography>
               </Grid>
             </Grid>
@@ -310,7 +313,7 @@ export default function Services({ movingRates, packingRates }) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const [movingRatesRes, packingRatesRes] = await Promise.all([
     fetch(`${process.env.PRODUCTION_URL}/api/movingrates`),
     fetch(`${process.env.PRODUCTION_URL}/api/packingrates`),

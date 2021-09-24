@@ -3,7 +3,7 @@ import MovingRates from '../../../models/MovingRates'
 
 dbConnect()
 
-export default async (req, res) => {
+export default async function index(req, res) {
   const { method } = req
 
   switch (method) {

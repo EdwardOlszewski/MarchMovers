@@ -103,7 +103,7 @@ export default function Recommendations({ companies }) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const res = await fetch(`${process.env.PRODUCTION_URL}/api/companies`)
   const { data } = await res.json()
 
