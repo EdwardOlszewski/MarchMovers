@@ -39,7 +39,6 @@ export default function Recommendations({ companies }) {
 
   return (
     <>
-      {' '}
       <Head>
         <title>Testimonials</title>
       </Head>
