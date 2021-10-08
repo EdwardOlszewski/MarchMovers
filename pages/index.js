@@ -1,4 +1,10 @@
-import { Typography, makeStyles, Container, Grid } from '@material-ui/core'
+import {
+  Typography,
+  makeStyles,
+  Container,
+  Grid,
+  Hidden,
+} from '@material-ui/core'
 import TopBanner from '../components/TopBanner'
 import Image from 'next/image'
 
@@ -17,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
   },
   whiteDiv: {
     padding: '2rem 0rem 2rem 0rem',
+  },
+  truckDiv: {
+    paddingTop: '8rem',
+    marginBottom: '-7rem',
   },
   container: {
     [theme.breakpoints.up('xs')]: {
@@ -127,71 +137,7 @@ export default function Home() {
             </Grid>
           </Container>
         </div>
-
-        <div className={classes.whiteDiv}>
-          <Container maxWidth='false' className={classes.container}>
-            <Grid container spacing={1}>
-              <Grid item xs={11} sm={6} md={5} className={classes.gridItem}>
-                <Image
-                  src='/images/4.png'
-                  width={'100%'}
-                  height={'70%'}
-                  layout={'responsive'}
-                  alt='truckPicture'
-                />
-              </Grid>
-              <Grid item xs={11} sm={6} md={5} className={classes.gridItem}>
-                <Image
-                  src='/images/5.png'
-                  width={'100%'}
-                  height={'70%'}
-                  layout={'responsive'}
-                  alt='truckPicture2'
-                />
-              </Grid>
-            </Grid>
-          </Container>
-        </div>
-
-        <div className={classes.grayDiv}></div>
       </>
     </>
   )
 }
-
-/*
-
-  <Typography variant='h2' className={classes.pageTitle}>
-          Family owned &
-        </Typography>
-        <Typography
-          variant='h3'
-          className={classes.pageTitle}
-          style={{ color: '#CC2936' }}
-        >
-          operated since 1957
-        </Typography>
-
-
-
-<Grid item xs={12} sm={7} md={8} className={classes.gridItem}>
-                <Typography variant='h3' className={classes.imageText}>
-                  We will protect your family’s
-                </Typography>
-                <br />
-                <Typography variant='h3' className={classes.imageText}>
-                  possessions like a trusted friend
-                </Typography>
-              </Grid>
-
-
-
-
-                   <Image
-          src='/images/path.jpg'
-          width={'100%'}
-          height={'20%'}
-          layout={'responsive'}
-        />
-
-*/

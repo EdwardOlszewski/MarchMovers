@@ -76,7 +76,6 @@ export default function Recommendations({ companies }) {
           style={{
             padding: '1rem',
             marginTop: '3rem',
-            marginBottom: '2rem',
           }}
         >
           <Typography
@@ -96,7 +95,6 @@ export default function Recommendations({ companies }) {
             </Grid>
           </Grid>
         </div>
-        <div style={{ padding: '3rem', backgroundColor: '#f8f8f8' }}></div>
       </>
     </>
   )

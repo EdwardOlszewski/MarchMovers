@@ -265,11 +265,7 @@ export default function Services({ movingRates, packingRates }) {
 
         <div style={{ marginTop: '2rem' }}>
           <Container maxWidth='lg'>
-            <Typography
-              variant='h4'
-              style={{ marginBottom: '4rem' }}
-              className={classes.heading}
-            >
+            <Typography variant='h4' className={classes.heading}>
               Our Rates
             </Typography>
             <Grid container spacing={10}>
@@ -307,7 +303,6 @@ export default function Services({ movingRates, packingRates }) {
             </Container>
           </Container>
         </div>
-        <div style={{ padding: '3rem', backgroundColor: '#f8f8f8' }}></div>
       </>
     </>
   )
