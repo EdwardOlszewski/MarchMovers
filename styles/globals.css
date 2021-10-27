@@ -33,7 +33,7 @@ a {
 
 .mainTitle {
   max-width: 100%;
-  height: 250px;
+  height: 35vh;
   background-image: url(../public/images/path.jpg);
   background-position: top right;
   background-repeat: no-repeat;
@@ -48,9 +48,3 @@ a {
     background-size: cover;
   }
 }
-
-/*
-sometimes it's a long wat home,
-but we'll get you there safely.
-
-*/

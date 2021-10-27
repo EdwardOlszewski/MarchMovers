@@ -2,18 +2,6 @@ import React from 'react'
 import { makeStyles, Typography, Paper, Container } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    [theme.breakpoints.up('xs')]: {
-      height: '300px',
-    },
-    [theme.breakpoints.up('md')]: {
-      height: '300px',
-    },
-    [theme.breakpoints.up('lg')]: {
-      height: '20vmax',
-    },
-  },
   title: {
     textAlign: 'center',
     margin: 'auto',
@@ -24,7 +12,10 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
   },
   textContainer: {
-    paddingTop: '5rem',
+    paddingTop: '7vh',
+  },
+  paper: {
+    marginTop: '6vh',
   },
 }))
 
@@ -32,19 +23,17 @@ export default function ButtonAppBar({ children }) {
   const classes = useStyles()
 
   return (
-    <Paper elevation={0}>
-      <Container className={classes.title}>
-        <div className='mainTitle'>
-          <div className={classes.textContainer}>
-            <Typography variant='h5' className={classes.bannerText}>
-              sometimes it&apos;s a long way home,
-            </Typography>
-            <Typography variant='h5' className={classes.bannerText}>
-              but we&apos;ll get you there safely.
-            </Typography>
-          </div>
+    <Paper elevation={0} className={classes.paper}>
+      <div className='mainTitle'>
+        <div className={classes.textContainer}>
+          <Typography variant='h4' className={classes.bannerText}>
+            Sometimes It&apos;s A Long Way Home,
+          </Typography>
+          <Typography variant='h4' className={classes.bannerText}>
+            But We&apos;ll Get You There Safely.
+          </Typography>
         </div>
-      </Container>
+      </div>
     </Paper>
   )
 }

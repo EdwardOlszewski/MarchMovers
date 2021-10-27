@@ -12,6 +12,10 @@ const useStyles = makeStyles((theme) => ({
   text: {
     textAlign: 'left',
     fontWeight: 1,
+
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '1.3vmax',
+    },
   },
   heading: {
     textAlign: 'center',
@@ -24,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
   },
   div: {
     backgroundColor: '#f8f8f8',
-
     paddingBottom: '2rem',
   },
   packingSub: {
@@ -33,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
   serviceList: {
     color: '#CC2936',
+    padding: '3rem',
   },
   btmRateContainer: {
     marginTop: '2rem',
@@ -75,7 +79,7 @@ export default function Services({ movingRates, packingRates }) {
             >
               Low Cost Storage
             </Typography>
-            <Grid container spacing={10}>
+            <Grid container xl={12} spacing={10}>
               <Grid item xs={12} sm={12} md={6} className={classes.gridItem}>
                 <Typography variant='h5' className={classes.text}>
                   We offer a state-of-the-art indoor storage facility. All
@@ -122,8 +126,8 @@ export default function Services({ movingRates, packingRates }) {
               <Grid item xs={10} sm={5} md={4} className={classes.gridItem}>
                 <Image
                   src='/images/1.png'
-                  width={'90%'}
-                  height={'70%'}
+                  width={'100%'}
+                  height={'80%'}
                   layout={'responsive'}
                   alt='storagePicture1'
                 />
@@ -131,8 +135,8 @@ export default function Services({ movingRates, packingRates }) {
               <Grid item xs={10} sm={5} md={4} className={classes.gridItem}>
                 <Image
                   src='/images/2.png'
-                  width={'90%'}
-                  height={'70%'}
+                  width={'100%'}
+                  height={'80%'}
                   layout={'responsive'}
                   alt='storagePicture2'
                 />
@@ -140,8 +144,8 @@ export default function Services({ movingRates, packingRates }) {
               <Grid item xs={10} sm={5} md={4} className={classes.gridItem}>
                 <Image
                   src='/images/3.png'
-                  width={'90%'}
-                  height={'70%'}
+                  width={'100%'}
+                  height={'80%'}
                   layout={'responsive'}
                   alt='storagePicture3'
                 />
@@ -153,17 +157,16 @@ export default function Services({ movingRates, packingRates }) {
         <div
           style={{
             backgroundColor: '#f8f8f8',
-            padding: '2rem',
-            paddingTop: '4rem',
+            paddingTop: '3rem',
           }}
         >
           <Container maxWidth='lg'>
-            <Grid container spacing={1}>
+            <Grid container spacing={0}>
               <Grid
                 item
                 xs={12}
                 sm={6}
-                md={5}
+                md={4}
                 lg={6}
                 className={classes.gridItem}
               >
@@ -175,7 +178,7 @@ export default function Services({ movingRates, packingRates }) {
                 item
                 xs={12}
                 sm={6}
-                md={7}
+                md={4}
                 lg={6}
                 className={classes.gridItem}
               >
@@ -191,8 +194,6 @@ export default function Services({ movingRates, packingRates }) {
         <div
           style={{
             backgroundColor: '#f8f8f8',
-            padding: '2rem',
-            paddingTop: '4rem',
           }}
         >
           <Container maxWidth='lg'>
@@ -228,8 +229,7 @@ export default function Services({ movingRates, packingRates }) {
         <div
           style={{
             backgroundColor: '#f8f8f8',
-            padding: '2rem',
-            paddingTop: '4rem',
+            paddingBottom: '3rem',
           }}
         >
           <Container maxWidth='lg'>

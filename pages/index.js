@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   grayDiv: {
     backgroundColor: '#f8f8f8',
     padding: '2rem 0rem 2rem 0rem',
+    marginTop: '5rem',
   },
   whiteDiv: {
     padding: '2rem 0rem 2rem 0rem',
@@ -35,8 +36,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       width: '100%',
     },
-    [theme.breakpoints.up('xl')]: {
-      width: '70%',
+    [theme.breakpoints.up('lg')]: {
+      width: '80%',
     },
   },
 
@@ -56,8 +57,10 @@ const useStyles = makeStyles((theme) => ({
 
   text: {
     textAlign: 'left',
-
     fontWeight: 1,
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '1.2vmax',
+    },
   },
   bannerText: {
     color: 'white',
@@ -76,7 +79,7 @@ export default function Home() {
 
       <>
         <div className={classes.grayDiv}>
-          <Container maxWidth='false' className={classes.container}>
+          <Container maxWidth='xl' className={classes.container}>
             <Grid container spacing={3}>
               <Grid
                 item

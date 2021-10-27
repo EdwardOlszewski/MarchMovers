@@ -45,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   truckDiv: {
-    paddingTop: '8rem',
-    marginBottom: '-7rem',
+    paddingTop: '5rem',
+    marginBottom: '-100px',
     backgroundColor: 'white',
   },
 }))
