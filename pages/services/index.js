@@ -261,7 +261,7 @@ export default function Services({
               >
                 <Typography variant='h5' className={classes.text}>
                   We have moved dozens of gun safes for many different people.
-                  Many companies won't touch them. We dont shy away!
+                  Many companies won&apos;t touch them. We dont shy away!
                 </Typography>
               </Grid>
             </Grid>
