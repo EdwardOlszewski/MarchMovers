@@ -260,7 +260,7 @@ export default function Services({
                 className={classes.gridItem}
               >
                 <Typography variant='h5' className={classes.text}>
-                  We have moved dozens of gun safes for many different people.
+                  We have moved hundreds of gun safes for many different people.
                   Many companies won&apos;t touch them. We dont shy away!
                 </Typography>
               </Grid>
@@ -280,19 +280,19 @@ export default function Services({
                   title={'Moving Rates'}
                   data={movingRates.data}
                 />
-                <br />
-                <br />
-                <MovingTable
-                  width={'100%'}
-                  title={'Unpacking Rates'}
-                  data={unpackingrates.data}
-                />
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
                 <MovingTable
                   width={'100%'}
                   title={'Packing Rates'}
                   data={packingRates.data}
+                />
+                <br />
+                <br />
+                <MovingTable
+                  width={'100%'}
+                  title={'Unpacking Rates'}
+                  data={unpackingrates.data}
                 />
               </Grid>
             </Grid>

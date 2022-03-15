@@ -145,12 +145,6 @@ export default function BottomAppBar() {
                 <Typography variant='subtitle1' className={classes.gridItem}>
                   Licensed, Insured, and Bonded
                 </Typography>
-                <Typography variant='subtitle1' className={classes.gridItem}>
-                  IL MC 16067 Interstate MC 708934 DOT
-                </Typography>
-                <Typography variant='subtitle1' className={classes.gridItem}>
-                  2011292
-                </Typography>
               </Container>
             </Grid>
           </Grid>

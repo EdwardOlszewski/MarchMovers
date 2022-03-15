@@ -100,7 +100,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               <BusinessOutlinedIcon />
             </ListItemIcon>
-            <ListItemText primary='10004 S 76th Ave Suite I Bridgeview, IL 60455' />
+            <ListItemText primary='10004 S 76th Ave Suite i Bridgeview, IL 60455' />
           </ListItem>
         </a>
       </List>
