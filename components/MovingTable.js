@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Typography, Container } from '@material-ui/core'
+import { makeStyles, Typography } from '@material-ui/core'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -82,7 +82,7 @@ export default function BasicTable({ title, data }) {
         <TableBody>
           {data.map((info) => (
             <TableRow key={info.rate}>
-              <TableCell style={{ borderColor: '#f2f2f2' }}>
+              <TableCell key={info.rate} style={{ borderColor: '#f2f2f2' }}>
                 <div className={classes.innerDiv}>
                   <Typography variant='subtitle1' className={classes.text}>
                     {info.name}

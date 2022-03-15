@@ -56,11 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Services({
-  movingRates,
-  packingRates,
-  unpackingrates,
-}) {
+export default function Services({ movingRates, packingRates }) {
   const classes = useStyles()
 
   return (
@@ -282,11 +278,6 @@ export default function Services({
                 />
                 <br />
                 <br />
-                <MovingTable
-                  width={'100%'}
-                  title={'Unpacking Rates'}
-                  data={unpackingrates.data}
-                />
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
                 <MovingTable
@@ -318,18 +309,16 @@ export default function Services({
 }
 
 export const getStaticProps = async () => {
-  const [movingRatesRes, packingRatesRes, unpackingRatesRes] =
-    await Promise.all([
-      fetch(`${process.env.PRODUCTION_URL}/api/movingrates`),
-      fetch(`${process.env.PRODUCTION_URL}/api/packingrates`),
-      fetch(`${process.env.PRODUCTION_URL}/api/unpackingrates`),
-    ])
+  const [movingRatesRes, packingRatesRes] = await Promise.all([
+    fetch(`${process.env.PRODUCTION_URL}/api/movingrates`),
+    fetch(`${process.env.PRODUCTION_URL}/api/packingrates`),
+    ,
+  ])
 
   const [movingRates, packingRates, unpackingrates] = await Promise.all([
     movingRatesRes.json(),
     packingRatesRes.json(),
-    unpackingRatesRes.json(),
   ])
 
-  return { props: { movingRates, packingRates, unpackingrates } }
+  return { props: { movingRates, packingRates } }
 }

@@ -119,7 +119,7 @@ export default function SwipeableTemporaryDrawer() {
         </IconButton>
 
         <SwipeableDrawer
-          open={state['left']}
+          open={Boolean(state['left'])}
           onClose={toggleDrawer('left', false)}
           onOpen={toggleDrawer('left', true)}
         >
