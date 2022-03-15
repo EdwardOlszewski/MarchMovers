@@ -128,7 +128,7 @@ export default function BottomAppBar() {
                 <Grid item xs={10} sm={11}>
                   <a href='http://maps.google.com/?q=10004 S 76th Ave Suite I Bridgeview, IL 60455'>
                     <Typography variant='subtitle1' className={classes.link}>
-                      10004 S 76th Ave Suite I Bridgeview, IL 60455
+                      10004 S 76th Ave Suite i Bridgeview, IL 60455
                     </Typography>
                   </a>
                 </Grid>

@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     textAlign: 'center',
     paddingTop: '2rem',
+    paddingBottom: '2rem',
   },
   rateBottom: {
     textAlign: 'left',
@@ -55,7 +56,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Services({ movingRates, packingRates }) {
+export default function Services({
+  movingRates,
+  packingRates,
+  unpackingrates,
+}) {
   const classes = useStyles()
 
   return (
@@ -243,7 +248,7 @@ export default function Services({ movingRates, packingRates }) {
                 className={classes.gridItem}
               >
                 <Typography className={classes.serviceList} variant='h4'>
-                  Hoisting services
+                  Gun Safes
                 </Typography>
               </Grid>
               <Grid
@@ -255,8 +260,8 @@ export default function Services({ movingRates, packingRates }) {
                 className={classes.gridItem}
               >
                 <Typography variant='h5' className={classes.text}>
-                  We offer hoisting serivces on large bulk items. Couches, large
-                  Tv&apos;s, etc..
+                  We have moved dozens of gun safes for many different people.
+                  Many companies won't touch them. We dont shy away!
                 </Typography>
               </Grid>
             </Grid>
@@ -275,6 +280,13 @@ export default function Services({ movingRates, packingRates }) {
                   title={'Moving Rates'}
                   data={movingRates.data}
                 />
+                <br />
+                <br />
+                <MovingTable
+                  width={'100%'}
+                  title={'Unpacking Rates'}
+                  data={unpackingrates.data}
+                />
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
                 <MovingTable
@@ -282,9 +294,6 @@ export default function Services({ movingRates, packingRates }) {
                   title={'Packing Rates'}
                   data={packingRates.data}
                 />
-                <Typography variant='subtitle2' className={classes.packingSub}>
-                  All packing includes materials and labor
-                </Typography>
               </Grid>
             </Grid>
             <Container className={classes.btmRateContainer}>
@@ -309,15 +318,18 @@ export default function Services({ movingRates, packingRates }) {
 }
 
 export const getStaticProps = async () => {
-  const [movingRatesRes, packingRatesRes] = await Promise.all([
-    fetch(`${process.env.PRODUCTION_URL}/api/movingrates`),
-    fetch(`${process.env.PRODUCTION_URL}/api/packingrates`),
-  ])
+  const [movingRatesRes, packingRatesRes, unpackingRatesRes] =
+    await Promise.all([
+      fetch(`${process.env.PRODUCTION_URL}/api/movingrates`),
+      fetch(`${process.env.PRODUCTION_URL}/api/packingrates`),
+      fetch(`${process.env.PRODUCTION_URL}/api/unpackingrates`),
+    ])
 
-  const [movingRates, packingRates] = await Promise.all([
+  const [movingRates, packingRates, unpackingrates] = await Promise.all([
     movingRatesRes.json(),
     packingRatesRes.json(),
+    unpackingRatesRes.json(),
   ])
 
-  return { props: { movingRates, packingRates } }
+  return { props: { movingRates, packingRates, unpackingrates } }
 }

@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
   title: {
     flex: '1 1 100%',
+    paddingBottom: '.5rem',
   },
   text: {
     [theme.breakpoints.up('xs')]: {

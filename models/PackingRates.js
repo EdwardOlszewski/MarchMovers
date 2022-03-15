@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const PackingRatesSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Please add a moving rate'],
+    required: [true, 'Please add a packing rate'],
   },
 })
 
