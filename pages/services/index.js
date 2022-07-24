@@ -56,11 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Services({
-  movingRates,
-  packingRates,
-  unpackingrates,
-}) {
+export default function Services() {
   const classes = useStyles()
 
   return (
@@ -268,7 +264,18 @@ export default function Services({
           </Container>
         </div>
 
-        <div style={{ marginTop: '2rem' }}>
+       
+      </>
+    </>
+  )
+}
+
+
+
+
+/*
+
+ <div style={{ marginTop: '2rem' }}>
           <Container maxWidth='lg'>
             <Typography variant='h4' className={classes.heading}>
               Our Rates
@@ -312,10 +319,7 @@ export default function Services({
             </Container>
           </Container>
         </div>
-      </>
-    </>
-  )
-}
+
 
 export const getStaticProps = async () => {
   const [movingRatesRes, packingRatesRes, unpackingRatesRes] =
@@ -333,3 +337,5 @@ export const getStaticProps = async () => {
 
   return { props: { movingRates, packingRates, unpackingrates } }
 }
+
+*/
