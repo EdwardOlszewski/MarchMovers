@@ -268,8 +268,23 @@ export default function Services() {
   )
 }
 
+<<<<<<< HEAD
 /*
 <div style={{ marginTop: '2rem' }}>
+=======
+       
+      </>
+    </>
+  )
+}
+
+
+
+
+/*
+
+ <div style={{ marginTop: '2rem' }}>
+>>>>>>> e4e7136eaadcb35039a32c92bd8c54f2aea3fe9e
           <Container maxWidth='lg'>
             <Typography variant='h4' className={classes.heading}>
               Our Rates
@@ -313,6 +328,10 @@ export default function Services() {
             </Container>
           </Container>
         </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4e7136eaadcb35039a32c92bd8c54f2aea3fe9e
 
         export const getStaticProps = async () => {
   const [movingRatesRes, packingRatesRes, unpackingRatesRes] =
@@ -331,6 +350,9 @@ export default function Services() {
   return { props: { movingRates, packingRates, unpackingrates } }
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e4e7136eaadcb35039a32c92bd8c54f2aea3fe9e
 */
